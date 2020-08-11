@@ -1,8 +1,8 @@
-<p>
-  <% @post.categories.each do |category| %>
-    <span class="badge"><%= category.name %></span>
-  <% end %>
+<p class='pull-right'>
+  [<%= link_to 'edit this post', edit_post_path(@post) %>]
+</p>
 
+<p>
   <%= render @post.categories %>
 </p>
 
