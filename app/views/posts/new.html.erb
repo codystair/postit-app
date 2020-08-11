@@ -1,0 +1,32 @@
+<%= render 'shared/content_title', title: 'Create a New Post' %>
+
+<% if @post.errors.any? %>
+  <div class='row'>
+    <div class='alert alert-eorror span8'>
+      <h5>Please fix the following errors:</h5>
+      <ul>
+        <% @post.errors.full_messages.each do |msg|%>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>
+
+<div class='well'>
+  <%= form_for @post do |f| %>
+    <div class='control-group'>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
+    <div class='control-group'>
+      <%= f.label :url %>
+      <%= f.text_field :url %>
+    </div>
+    <div class='control-group'>
+      <%= f.label :description %>
+      <%= f.text_area :description, rows: 5 %>
+    </div>
+    <%= f.submit 'Create Post', class: 'btn btn-primary' %>
+  <% end %>
+</div>
