@@ -1,8 +1,5 @@
 <%= render 'shared/content_title', title: 'New Category' %>
-
-<% if @category.errors.any? %>
-  <%= render 'posts/post', post: post %>
-<% end %>
+<%= render 'shared/errors', obj: @category %>
 
 <div class='well'>
   <%= form_for @category do |f|%>
