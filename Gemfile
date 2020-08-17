@@ -15,7 +15,6 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
-gem 'pg'
 
 group :doc do
   gem 'sdoc', require: false
@@ -28,6 +27,6 @@ group :development do
 end
 
 group :production do
-  gem 'pg'
+  gem 'pg', '~> 0.11'
   gem 'rails_12factor'
 end
